@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-c6-devkitc-1", "id": "esp", "top": 5.29, "left": 4.12, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 71.15,
+      "left": -67.2,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 29.56, "left": -105.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 80.75,
+      "left": -76.8,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "chip-bh1750", "id": "chip1", "top": 106.62, "left": -148.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "r2:1", "vcc1:VCC", "red", [ "v1.33", "h-20.28" ] ],
+    [ "r3:1", "vcc1:VCC", "red", [ "v0", "h-28.8" ] ],
+    [ "esp:6", "r2:2", "green", [ "h0" ] ],
+    [ "esp:7", "r3:2", "gold", [ "h0" ] ],
+    [ "vcc1:VCC", "chip1:VCC", "red", [ "v19.2", "h-48" ] ],
+    [ "chip1:GND", "esp:GND.1", "black", [ "h0", "v28.8" ] ],
+    [ "chip1:SDA", "esp:6", "green", [ "v0", "h40.21", "v-48" ] ],
+    [ "esp:7", "chip1:SCL", "gold", [ "h-19.2", "v28.8", "h-28.8" ] ]
+  ],
+  "serialMonitor": { "display": "terminal" },
+  "dependencies": {}
+}

@@ -1,0 +1,20 @@
+{
+  "name": "BH1750",
+  "author": "Uri Shaked",
+  "pins": [
+    "VCC",
+    "GND",
+    "SDA",
+    "SCL"
+  ],
+  "controls": [
+    {
+      "id": "lux",
+      "label": "LUX",
+      "type": "range",
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    }
+  ]
+}

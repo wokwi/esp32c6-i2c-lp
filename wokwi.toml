@@ -1,0 +1,8 @@
+[wokwi]
+version = 1
+elf = "firmware/lp_i2c_example.elf"
+firmware = "firmware/lp_i2c_example.elf"
+
+[[chip]]
+name = 'bh1750'  # To use the chip in diagram.json, add a part with "chip-inverter" type.
+binary = 'chips/bh1750.chip.wasm'
