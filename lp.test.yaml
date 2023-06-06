@@ -1,0 +1,13 @@
+name: LP Core Test
+version: 1
+author: Uri Shaked
+
+steps:
+  - wait-serial: 'Entering deep sleep...'
+  - delay: 500ms
+  - set-control:
+      part-id: chip1 # The temperature sensor chip
+      control: lux
+      value: 1256
+  - wait-serial: 'LP core woke up the main CPU'
+  - wait-serial: 'Lux = 1256'

@@ -1,0 +1,17 @@
+name: Build and test
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  test-on-wokwi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test ESP32-C6 low power scenario on Wokwi
+        uses: wokwi/wokwi-ci-action@v1
+        with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          path: /
+          scenario: 'lp.test.yaml'
