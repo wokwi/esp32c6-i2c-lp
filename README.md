@@ -4,7 +4,7 @@ ESP32-C6 Low Power example - using an I2C light sensor (BH1750) to wake up the c
 
 For more information about the example:
 
-- [lp_i2c README](https://github.com/espressif/esp-idf/blob/master/examples/system/lp_core/lp_i2c/README.md)
+- [lp_i2c README](https://github.com/espressif/esp-idf/blob/master/examples/system/ulp/lp_core/lp_i2c/README.md)
 
 ## Running the project
 
